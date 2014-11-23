@@ -1,0 +1,32 @@
+/ @include 'kit/head.kit'
+
+%header 
+  .container_12
+    .grid_3
+      / @include 'kit/b_logo.kit'
+    .grid_6
+      / @include 'kit/b_menu.kit'
+    .grid_3
+      / @include 'kit/b_search.kit'
+
+%section.main 
+  .container_12.clearfix
+    /%aside.grid_3
+    /#  @include 'kit/b_btns1.kit'
+    %section.content.fl
+      / @include 'kit/b_find1.kit'
+  .noise2
+    .container_12.clearfix
+      / $label = <span class="label color1">для детей</span>
+      / @include 'kit/b_mini_excursion.kit'
+      / @include 'kit/b_large_excursion.kit'
+      .clear
+      / $label = <span class="label color2">для романтиков</span>
+      / @include 'kit/b_mini_excursion.kit'
+      / $label = <span class="label color3">для активных</span>
+      / @include 'kit/b_mini_excursion.kit'
+      / @include 'kit/b_mini_excursion.kit'
+%footer 
+  / @include 'kit/b_footer.kit'
+
+/ @include 'kit/foot.kit'

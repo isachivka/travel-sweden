@@ -1,0 +1,49 @@
+/ @include 'kit/head.kit'
+
+%header 
+  .container_12
+    .grid_3
+      / @include 'kit/b_logo.kit'
+    .grid_6
+      / @include 'kit/b_menu.kit'
+    .grid_3
+      / @include 'kit/b_search.kit'
+
+%section.main 
+  .container_12.clearfix
+    /%aside.grid_3
+    /# @include 'kit/b_btns1.kit'
+    %section.content.fl
+      / @include 'kit/b_find2.kit'
+    .clear
+  .container_12.clearfix
+    %ul.b_noise_tabs.grid_12
+      %li.active
+        %a{:href => "", :rel => 1} Список
+      %li
+        %a{:href => "", :rel => 2} На карте
+  .noise2{:rel => 1}
+    .container_12.clearfix
+      / @include 'kit/b_sort_hotels.kit'
+      / $label = <span class="label color1">для детей</span>
+      / @include 'kit/b_mini_hotel.kit'
+      / @include 'kit/b_large_hotel.kit'
+      .clear
+      / $label = <span class="label color2">для романтиков</span>
+      / @include 'kit/b_mini_hotel.kit'
+      / $label = <span class="label color3">для активных</span>
+      / @include 'kit/b_mini_hotel.kit'
+      / $label = <span class="label color1">для детей</span>
+      / @include 'kit/b_mini_hotel.kit'
+  .noise2.hide{:rel => 2}
+    .container_12.clearfix
+      / @include 'kit/b_sort_hotels.kit'
+      / @include 'kit/b_map1.kit'
+      .clear 
+      / @include 'kit/b_hotels_table.kit'
+    
+
+%footer 
+  / @include 'kit/b_footer.kit'
+
+/ @include 'kit/foot.kit'

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <title></title>
+  <meta name="description">
+  <meta content="width=device-width" name="viewport">
+  <link href="application.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+  <![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+</head>
+<body><header>
+  <div class='container_12'>
+    <div class='grid_3'>
+      <a href="" class="b_logo"></a>    </div>
+    <div class='grid_6'>
+      <ul class="b_menu">
+  <li><a href="">Главная</a></li>
+  <li><a class="active" href="">Отели</a></li>
+  <li><a href="">Экскурсии</a></li>
+  <li><a href="">Туры</a></li>
+  <li><a href="">Блог</a></li>
+</ul>    </div>
+    <div class='grid_3'>
+      <form action="" class="b_search">
+  <input type="text" placeholder="Поиск по сайту">
+  <input type="image" src="i/search.png">
+</form>    </div>
+  </div>
+</header>
+<section class='main'>
+  <div class='container_12 clearfix'>
+    <!-- %aside.grid_3 -->
+    <!-- #  @include 'kit/b_btns1.kit' -->
+    <section class='content fl'>
+      <div class="b_find">
+  <div class="field deli grid_2">
+    Дата <input class="date date2" type="text">
+  </div>
+  <div class="field grid_2">
+    <div class="select_field">
+      <div class="label"><em>Тип тура</em></div><div class="op"></div>
+      <div class="content">
+        <div class="f"><label><input type="checkbox"> 3*</label></div>
+        <div class="f"><label><input type="checkbox"> 4*</label></div>
+        <div class="f"><label><input type="checkbox"> 5*</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="field grid_4">
+    <div class="select_field">
+      <div class="label"><em>Продолжительность</em></div><div class="op"></div>
+      <div class="content">
+        <input type="text" class="slider_values" id="amount" style="box-shadow:none;" />
+        <div id="slider-range1"></div>
+        <script>
+          $(document).ready(function() {
+            $("#slider-range1").slider({
+              range: true,
+              min: 3,
+              max: 20,
+              values: [ 3, 20 ],
+              slide: function( event, ui ) {
+                $("#amount").val(ui.values[ 0 ] + " ночей - " + ui.values[ 1 ] + " ночей");
+              }
+            });
+            $("#amount").val($("#slider-range1").slider("values", 0) + " ночей - " + $("#slider-range1").slider("values", 1) + " ночей");
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="field grid_4">
+    <div class="select_field">
+      <div class="label"><em>Цена</em></div><div class="op"></div>
+      <div class="content">
+        <input type="text" class="slider_values" id="amount1" style="box-shadow:none;" />
+        <div id="slider-range2"></div>
+        <script>
+          $(document).ready(function() {
+            $("#slider-range2").slider({
+              range: true,
+              min: 0,
+              max: 100000,
+              values: [ 0, 100000 ],
+              slide: function( event, ui ) {
+                $("#amount1").val(ui.values[ 0 ] + " руб. - " + ui.values[ 1 ] + " руб.");
+              }
+            });
+            $("#amount1").val($("#slider-range2").slider("values", 0) + " руб. - " + $("#slider-range2").slider("values", 1) + " руб.");
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="b_peoples grid_10">
+    <div class="adult grid_1-5 alpha">
+      <label for="">Взрослых</label>
+      <select name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+      </select>
+    </div>
+    <div class="childs grid_4-5 omega">
+      <label for="">Детей</label>
+      <select class="count" name="" id="">
+        <option selected value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="" class="years hide">Возраст:</label>
+      <select class="hide ye" name="" id="">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <select class="hide ye" name="" id="">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <select class="hide ye" name="" id="">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
+  <div class="field grid_2">
+    <input type="submit" value="искать" class="b_btn blue" />
+  </div>
+</div>    </section>
+  </div>
+  <div class='noise2'>
+    <div class='container_12 clearfix'>
+            <div class="b_mini_elem b_mini_tour grid_4">
+  <div class="wrap">
+    <a href=""><img src="i/hotel.png" class="main"></a>
+    <a href="" class="name">Best Western Plus Time Hotel ****</a>
+    <span class="label color1">для детей</span>    <p class="desc">Этот отель расположен в центральном и в то же время тихом жилом районе Стокгольма, рядом с парком Ванадислунден.</p>
+    <div class="line">
+      <div class="ex_time">19.05, 21.05</div>
+      <div class="ex_tags">Defcad, освободитель, ABS-пластик</div>
+      <div class="clear"></div>
+      <a href="" class="b_btn">Купить</a>
+      <span class="to_time">7 ночей<span>
+      <a href="" class="price"><em>131$</em> за сутки</a>
+    </div>
+  </div>
+</div>      <div class="b_large_elem b_mini_tour grid_8">
+  <div class="wrap clearfix">
+    <div class="image grid_4 alpha">
+      <a href=""><img src="i/hotel1.png" class="main"></a>
+    </div>
+    <div class="data grid_4 omega">
+      <a href="" class="name">Best Western Plus Time Hotel ****</a>
+      <p class="desc">Этот отель расположен в центральном и в то же время тихом жилом районе Стокгольма, рядом с парком Ванадислунден.</p>
+      <div class="line">
+        <div class="ex_time">19.05, 21.05</div>
+        <div class="clear"></div>
+        <a href="" class="b_btn">Купить</a>
+        <span class="to_time">7 ночей<span>
+        <a href="" class="price"><em>131$</em> за сутки</a>
+      </div>
+    </div>
+  </div>
+</div>      <div class='clear'></div>
+      <div class="b_mini_elem b_mini_tour grid_4">
+  <div class="wrap">
+    <a href=""><img src="i/hotel.png" class="main"></a>
+    <a href="" class="name">Best Western Plus Time Hotel ****</a>
+    <span class="label color1">для детей</span>    <p class="desc">Этот отель расположен в центральном и в то же время тихом жилом районе Стокгольма, рядом с парком Ванадислунден.</p>
+    <div class="line">
+      <div class="ex_time">19.05, 21.05</div>
+      <div class="ex_tags">Defcad, освободитель, ABS-пластик</div>
+      <div class="clear"></div>
+      <a href="" class="b_btn">Купить</a>
+      <span class="to_time">7 ночей<span>
+      <a href="" class="price"><em>131$</em> за сутки</a>
+    </div>
+  </div>
+</div>      <div class="b_mini_elem b_mini_tour grid_4">
+  <div class="wrap">
+    <a href=""><img src="i/hotel.png" class="main"></a>
+    <a href="" class="name">Best Western Plus Time Hotel ****</a>
+    <span class="label color1">для детей</span>    <p class="desc">Этот отель расположен в центральном и в то же время тихом жилом районе Стокгольма, рядом с парком Ванадислунден.</p>
+    <div class="line">
+      <div class="ex_time">19.05, 21.05</div>
+      <div class="ex_tags">Defcad, освободитель, ABS-пластик</div>
+      <div class="clear"></div>
+      <a href="" class="b_btn">Купить</a>
+      <span class="to_time">7 ночей<span>
+      <a href="" class="price"><em>131$</em> за сутки</a>
+    </div>
+  </div>
+</div>      <div class="b_mini_elem b_mini_tour grid_4">
+  <div class="wrap">
+    <a href=""><img src="i/hotel.png" class="main"></a>
+    <a href="" class="name">Best Western Plus Time Hotel ****</a>
+    <span class="label color1">для детей</span>    <p class="desc">Этот отель расположен в центральном и в то же время тихом жилом районе Стокгольма, рядом с парком Ванадислунден.</p>
+    <div class="line">
+      <div class="ex_time">19.05, 21.05</div>
+      <div class="ex_tags">Defcad, освободитель, ABS-пластик</div>
+      <div class="clear"></div>
+      <a href="" class="b_btn">Купить</a>
+      <span class="to_time">7 ночей<span>
+      <a href="" class="price"><em>131$</em> за сутки</a>
+    </div>
+  </div>
+</div>    </div>
+  </div>
+</section>
+<footer>
+  <div class="container_12 clearfix">
+  <div class="b_footer">
+    <div class="copyright grid_4">
+      2013 © Travel-Sweden.ru
+    </div>
+    <ul class="menu grid_4">
+      <li>Главная</li>
+      <li><a href="">Отели</a></li>
+      <li><a href="">Экскурсии</a></li>
+      <li><a href="">Туры</a></li>
+      <li><a href="">Блог</a></li>
+    </ul>
+    <div class="counter grid_2 prefix_2">
+      <a href=""><img src="i/counter.png" alt="" /></a>
+    </div>
+  </div>
+</div></footer>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>

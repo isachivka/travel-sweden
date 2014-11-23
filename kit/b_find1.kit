@@ -1,0 +1,132 @@
+<div class="b_find">
+  <div class="field deli grid_2">
+    Дата <input class="date date2" type="text">
+  </div>
+  <div class="field grid_2">
+    <div class="select_field">
+      <div class="label"><em>Откуда</em></div><div class="op"></div>
+      <div class="content">
+        <div class="f"><label><input type="checkbox"> 3*</label></div>
+        <div class="f"><label><input type="checkbox"> 4*</label></div>
+        <div class="f"><label><input type="checkbox"> 5*</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="field grid_2">
+    <div class="select_field">
+      <div class="label"><em>Куда</em></div><div class="op"></div>
+      <div class="content">
+        <div class="f"><label><input type="checkbox"> 3*</label></div>
+        <div class="f"><label><input type="checkbox"> 4*</label></div>
+        <div class="f"><label><input type="checkbox"> 5*</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="b_peoples grid_6">
+    <div class="adult grid_1-5 alpha">
+      <label for="">Взрослых</label>
+      <select name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+      </select>
+    </div>
+    <div class="childs grid_4-5 omega">
+      <label for="">Детей</label>
+      <select class="count" name="" id="">
+        <option selected value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="" class="years hide">Возраст:</label>
+      <select class="hide ye" name="" id="">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <select class="hide ye" name="" id="">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <select class="hide ye" name="" id="">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="field grid_2">
+    <div class="select_field">
+      <div class="label"><em>Тип экскурсии</em></div><div class="op"></div>
+      <div class="content">
+        <div class="f"><label><input type="checkbox"> 3*</label></div>
+        <div class="f"><label><input type="checkbox"> 4*</label></div>
+        <div class="f"><label><input type="checkbox"> 5*</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="field grid_2">
+    <div class="select_field">
+      <div class="label"><em>Транспорт</em></div><div class="op"></div>
+      <div class="content">
+        <div class="f"><label><input type="checkbox"> 3*</label></div>
+        <div class="f"><label><input type="checkbox"> 4*</label></div>
+        <div class="f"><label><input type="checkbox"> 5*</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="field grid_3">
+    <div class="select_field">
+      <div class="label"><em>Продолжительность</em></div><div class="op"></div>
+      <div class="content">
+        <input type="text" class="slider_values" id="amount" style="box-shadow:none;" />
+        <div id="slider-range1"></div>
+        <script>
+          $(document).ready(function() {
+            $("#slider-range1").slider({
+              range: true,
+              min: 3,
+              max: 20,
+              values: [ 3, 20 ],
+              slide: function( event, ui ) {
+                $("#amount").val(ui.values[ 0 ] + " ночей - " + ui.values[ 1 ] + " ночей");
+              }
+            });
+            $("#amount").val($("#slider-range1").slider("values", 0) + " ночей - " + $("#slider-range1").slider("values", 1) + " ночей");
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="field grid_3">
+    <div class="select_field">
+      <div class="label"><em>Цена</em></div><div class="op"></div>
+      <div class="content">
+        <input type="text" class="slider_values" id="amount1" style="box-shadow:none;" />
+        <div id="slider-range2"></div>
+        <script>
+          $(document).ready(function() {
+            $("#slider-range2").slider({
+              range: true,
+              min: 0,
+              max: 100000,
+              values: [ 0, 100000 ],
+              slide: function( event, ui ) {
+                $("#amount1").val(ui.values[ 0 ] + " руб. - " + ui.values[ 1 ] + " руб.");
+              }
+            });
+            $("#amount1").val($("#slider-range2").slider("values", 0) + " руб. - " + $("#slider-range2").slider("values", 1) + " руб.");
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="field grid_2">
+    <input type="submit" value="искать" class="b_btn blue" />
+  </div>
+</div>

@@ -1,0 +1,28 @@
+/ @include 'kit/head.kit'
+
+%header 
+  .container_12
+    .grid_3
+      / @include 'kit/b_logo.kit'
+    .grid_6
+      / @include 'kit/b_menu.kit'
+    .grid_3
+      / @include 'kit/b_search.kit'
+
+%section.main 
+  .container_12.clearfix
+    %aside.grid_3
+      / @include 'kit/b_blog_menu.kit'
+      / @include 'kit/b_blog_tags.kit'
+      / @include 'kit/b_blog_new_comments.kit'
+    %section.content.grid_9
+      / @include 'kit/b_blog_article_mini.kit'
+      / @include 'kit/b_blog_article_mini.kit'
+      / @include 'kit/b_blog_comments.kit'
+      / @include 'kit/b_blog_form.kit'
+      / @include 'kit/b_blog_paginator.kit'
+
+%footer 
+  / @include 'kit/b_footer.kit'
+
+/ @include 'kit/foot.kit'

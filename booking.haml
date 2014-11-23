@@ -1,0 +1,22 @@
+/ @include 'kit/head.kit'
+
+%header 
+  .container_12
+    .grid_3
+      / @include 'kit/b_logo.kit'
+    .grid_6
+      / @include 'kit/b_menu.kit'
+    .grid_3
+      / @include 'kit/b_search.kit'
+
+%section.main 
+  .container_12.clearfix
+    %section.content.grid_8
+      / @include 'kit/b_booking_form.kit'
+    %aside.grid_4 
+      / @include 'kit/b_booking_order.kit'
+
+%footer 
+  / @include 'kit/b_footer.kit'
+
+/ @include 'kit/foot.kit'

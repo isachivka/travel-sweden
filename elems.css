@@ -1,0 +1,37 @@
+body {
+  background: #ddd;
+  padding: 20px;
+}
+.b__elem {
+  margin: 0 0 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  position: relative;
+  *zoom: 1;
+}
+.b__elem.color {
+  background: #21a1b6;
+}
+.b__elem:before,
+.b__elem:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.b__elem:after {
+  clear: both;
+}
+.b__elem p.description {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #ccc;
+  border-radius: 0 10px 0 10px;
+  color: #555;
+  text-shadow: 1px 1px 0px #fff;
+  text-transform: uppercase;
+  padding: 3px 10px 3px 10px;
+  font-size: 10px;
+}
